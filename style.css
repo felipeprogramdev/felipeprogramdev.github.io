@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Pacifico', cursive, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+  background: url("Imgs-videos/img1\ \(1\).gif") center center / cover no-repeat fixed;
+}
+
+/* Conteúdo central */
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0.3em;
+  text-shadow: 2px 2px 8px #000000aa;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5em;
+  text-shadow: 1px 1px 6px #000000aa;
+}
+
+button {
+  background-color: #ff4d6d;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1a40;
+}
+
+.kiss {
+  font-size: 3rem;
+  margin-top: 1em;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation-fill-mode: forwards;
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  z-index: 10;
+}
+
+/* Animação beijo fixo */
+@keyframes showKiss {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação dos emojis 💋 caindo */
+@keyframes fallLipstickKiss {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Galeria de imagens com legendas carinhosas */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  padding: 1rem;
+  z-index: 10;
+  position: relative;
+  max-width: 1000px;
+}
+
+.gallery-item {
+  width: 220px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-12px);
+}
+
+.gallery-item:hover img {
+  box-shadow: 0 12px 30px rgba(255, 77, 109, 0.5);
+  transform: scale(1.05);
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  color: #fff5f8;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 3px #000;
+}
