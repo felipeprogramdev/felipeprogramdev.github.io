@@ -3,36 +3,32 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   font-family: 'Pacifico', cursive, sans-serif;
   color: white;
   overflow-x: hidden;
-  position: relative;
-  background: url("Imgs-videos/img1\ \(1\).gif") center center / cover no-repeat fixed;
+  background: url("Imgs-videos/img1 (1).gif") center center / cover no-repeat fixed;
 }
 
 /* Conteúdo central */
 .content {
-  position: relative;
-  z-index: 10;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
-  background: rgba(0, 0, 0, 0.3);
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 0.3em;
   text-shadow: 2px 2px 8px #000000aa;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 1.5em;
   text-shadow: 1px 1px 6px #000000aa;
 }
@@ -41,7 +37,7 @@ button {
   background-color: #ff4d6d;
   border: none;
   padding: 1em 2em;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: white;
   border-radius: 50px;
   cursor: pointer;
@@ -61,37 +57,32 @@ button:hover {
   animation-fill-mode: forwards;
   user-select: none;
   pointer-events: none;
-  position: relative;
-  z-index: 10;
 }
 
-/* Animação beijo fixo */
+/* Animações */
 @keyframes showKiss {
   0% {
     opacity: 0;
     transform: translateY(-20px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Animação dos emojis 💋 caindo */
 @keyframes fallLipstickKiss {
   0% {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
-
   100% {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
 }
 
-/* Galeria de imagens com legendas carinhosas */
+/* Galeria */
 .gallery {
   display: flex;
   justify-content: center;
@@ -99,9 +90,7 @@ button:hover {
   flex-wrap: wrap;
   margin: 2rem auto;
   padding: 1rem;
-  z-index: 10;
-  position: relative;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .gallery-item {
@@ -132,4 +121,53 @@ button:hover {
   color: #fff5f8;
   font-size: 1.1rem;
   text-shadow: 1px 1px 3px #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.8em 1.5em;
+  }
+
+  .gallery-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .kiss {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.7em 1.3em;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
 }
